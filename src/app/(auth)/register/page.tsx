@@ -1,7 +1,6 @@
 import Logo from "@/assets/Logo";
 import SignupForm from "@/components/forms/SignupForm";
 import Link from "next/link";
-import React from "react";
 
 const RegisterPage = () => {
   return (

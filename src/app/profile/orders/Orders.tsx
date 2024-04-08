@@ -81,7 +81,7 @@ export const orders: Order[] = [
     shippingAddress: "123 Main St",
     productItems: [
       {
-        id: "1",
+        _id: "1",
         title: "Apples",
         price: 15.0,
         image: "/groceryImages/apple.png",
@@ -89,7 +89,7 @@ export const orders: Order[] = [
         amount: 1,
       },
       {
-        id: "2",
+        _id: "2",
         title: "Apples",
         price: 15.0,
         image: "/groceryImages/apple.png",
@@ -97,7 +97,7 @@ export const orders: Order[] = [
         amount: 1,
       },
       {
-        id: "3",
+        _id: "3",
         title: "Apples",
         price: 15.0,
         image: "/groceryImages/apple.png",
@@ -119,7 +119,7 @@ export const orders: Order[] = [
     shippingAddress: "123 Main St",
     productItems: [
       {
-        id: "1",
+        _id: "1",
         title: "Apples",
         price: 15.0,
         image: "/groceryImages/apple.png",
@@ -127,7 +127,7 @@ export const orders: Order[] = [
         amount: 1,
       },
       {
-        id: "2",
+        _id: "2",
         title: "Apples",
         price: 15.0,
         image: "/groceryImages/apple.png",
@@ -135,7 +135,7 @@ export const orders: Order[] = [
         amount: 1,
       },
       {
-        id: "3",
+        _id: "3",
         title: "Apples",
         price: 15.0,
         image: "/groceryImages/apple.png",
@@ -157,7 +157,7 @@ export const orders: Order[] = [
     shippingAddress: "123 Main St",
     productItems: [
       {
-        id: "1",
+        _id: "1",
         title: "Apples",
         price: 15.0,
         image: "/groceryImages/apple.png",
@@ -165,7 +165,7 @@ export const orders: Order[] = [
         amount: 1,
       },
       {
-        id: "2",
+        _id: "2",
         title: "Apples",
         price: 15.0,
         image: "/groceryImages/apple.png",
@@ -173,7 +173,7 @@ export const orders: Order[] = [
         amount: 1,
       },
       {
-        id: "3",
+        _id: "3",
         title: "Apples",
         price: 15.0,
         image: "/groceryImages/apple.png",
@@ -195,7 +195,7 @@ export const orders: Order[] = [
     shippingAddress: "123 Main St",
     productItems: [
       {
-        id: "1",
+        _id: "1",
         title: "Apples",
         price: 15.0,
         image: "/groceryImages/apple.png",
@@ -203,7 +203,7 @@ export const orders: Order[] = [
         amount: 1,
       },
       {
-        id: "2",
+        _id: "2",
         title: "Apples",
         price: 15.0,
         image: "/groceryImages/apple.png",
@@ -211,7 +211,7 @@ export const orders: Order[] = [
         amount: 1,
       },
       {
-        id: "3",
+        _id: "3",
         title: "Apples",
         price: 15.0,
         image: "/groceryImages/apple.png",
@@ -233,7 +233,7 @@ export const orders: Order[] = [
     shippingAddress: "123 Main St",
     productItems: [
       {
-        id: "1",
+        _id: "1",
         title: "Apples",
         price: 15.0,
         image: "/groceryImages/apple.png",
@@ -241,7 +241,7 @@ export const orders: Order[] = [
         amount: 1,
       },
       {
-        id: "2",
+        _id: "2",
         title: "Apples",
         price: 15.0,
         image: "/groceryImages/apple.png",
@@ -249,7 +249,7 @@ export const orders: Order[] = [
         amount: 1,
       },
       {
-        id: "3",
+        _id: "3",
         title: "Apples",
         price: 15.0,
         image: "/groceryImages/apple.png",

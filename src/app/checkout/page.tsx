@@ -7,47 +7,6 @@ import ShippingAddressForm from "@/components/forms/ShippingAddressForm";
 import { AnimatePresence, Variants, motion } from "framer-motion";
 import { useState } from "react";
 
-// const slideLeft: Variants = {
-//   hidden: {
-//     opacity: 0,
-//     x: "-100%",
-//   },
-//   visible: {
-//     opacity: 1,
-//     x: 0,
-//     transition: {
-//       type: "spring",
-//       damping: 10,
-//       stiffness: 96,
-//     },
-//   },
-
-//   exit: {
-//     opacity: 0,
-//     x: "-100%",
-//   },
-// };
-// const slideRight: Variants = {
-//   hidden: {
-//     opacity: 0,
-//     x: "100%",
-//   },
-//   visible: {
-//     opacity: 1,
-//     x: 0,
-//     transition: {
-//       type: "spring",
-//       damping: 10,
-//       stiffness: 96,
-//     },
-//   },
-
-//   exit: {
-//     opacity: 0,
-//     x: "100%",
-//   },
-// };
-
 const containerVariants: Variants = {
   hidden: {
     opacity: 0,

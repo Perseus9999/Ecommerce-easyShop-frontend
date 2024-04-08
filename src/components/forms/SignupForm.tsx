@@ -14,14 +14,14 @@ import { Input } from "@/components/ui/input";
 import { setAuthenticated } from "@/lib/features/auth/authSlice";
 import fetchData from "@/lib/fetchDataFromApi";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "next/navigation";
 import { Dispatch, SetStateAction, useState } from "react";
 import { useForm } from "react-hook-form";
 import { FcGoogle } from "react-icons/fc";
+import { LuLoader } from "react-icons/lu";
 import { useDispatch } from "react-redux";
 import { z } from "zod";
 import { useToast } from "../ui/use-toast";
-import { useRouter } from "next/navigation";
-import { LuLoader } from "react-icons/lu";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name is required"),

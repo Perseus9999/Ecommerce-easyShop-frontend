@@ -1,7 +1,6 @@
 import Logo from "@/assets/Logo";
 import { LoginForm } from "@/components/forms/LoginForm";
 import Link from "next/link";
-import React from "react";
 
 const LoginPage = () => {
   return (

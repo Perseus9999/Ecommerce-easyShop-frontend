@@ -28,7 +28,7 @@ export function OrderTable({ products }: OrderTableProps) {
       </TableHeader>
       <TableBody>
         {products.map((item) => (
-          <TableRow key={item.id}>
+          <TableRow key={item._id}>
             <TableCell className="font-medium">
               <div className="flex gap-3">
                 <Image
@@ -40,7 +40,7 @@ export function OrderTable({ products }: OrderTableProps) {
                 />
                 <div>
                   <Link
-                    href={`/products/${item.id}`}
+                    href={`/products/${item._id}`}
                     className="hover:text-primary hover:underline"
                   >
                     {item.title}

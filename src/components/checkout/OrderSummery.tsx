@@ -1,17 +1,17 @@
 "use client";
 
+import { removeFromCart } from "@/lib/features/cart/cartSlice";
 import { useAppSelector } from "@/lib/hooks";
 import { totalPrice } from "@/lib/utils";
-import Image from "next/image";
-import { Button } from "../ui/button";
-import Link from "next/link";
-import { useDispatch } from "react-redux";
-import { HiMiniXMark } from "react-icons/hi2";
-import { removeFromCart } from "@/lib/features/cart/cartSlice";
 import { AnimatePresence, motion } from "framer-motion";
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
+import { HiMiniXMark } from "react-icons/hi2";
+import { useDispatch } from "react-redux";
 import Skeleton from "../loader/Skeleton";
+import { Button } from "../ui/button";
+import { Card, CardHeader, CardTitle } from "../ui/card";
 
 const paymentMethods = [
   {
@@ -46,14 +46,14 @@ const OrderSummery = () => {
           {cartItems.map((item) => (
             <motion.div
               layout
-              key={item.id}
+              key={item._id}
               className="group flex justify-between items-end py-3 hover:bg-accent px-3 rounded-lg relative"
             >
               <Button
                 type="button"
                 variant="outline"
                 className="absolute top-1 right-2 h-7 w-7 p-0 text-base rounded-full hover:text-primary hover:border-primary hidden group-hover:flex"
-                onClick={() => dispatch(removeFromCart(item.id))}
+                onClick={() => dispatch(removeFromCart(item._id))}
               >
                 <HiMiniXMark />
               </Button>
@@ -67,7 +67,7 @@ const OrderSummery = () => {
                 />
                 <div>
                   <Link
-                    href={`/products/${item.id}`}
+                    href={`/products/${item._id}`}
                     className="line-clamp-1 hover:text-primary hover:underline"
                   >
                     {item.title}
@@ -132,6 +132,7 @@ const OrderSummery = () => {
           type="button"
           disabled={cartItems.length <= 0 || selectedMethod === ""}
           className="w-full mt-5 capitalize"
+          onClick={placeOrder}
         >
           Place Order
         </Button>

@@ -39,7 +39,7 @@ const Wishlists = () => {
 
         <div className="grid grid-cols-1 min-[360px]:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-2.5 sm:gap-4">
           {wishlists.map((w) => (
-            <motion.div key={w.id} layout>
+            <motion.div key={w._id} layout>
               <WishlistCard {...w} />
             </motion.div>
           ))}
