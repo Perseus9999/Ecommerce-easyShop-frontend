@@ -1,6 +1,12 @@
 "use client";
 
-import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
+import React, {
+  Dispatch,
+  SetStateAction,
+  Suspense,
+  useEffect,
+  useState,
+} from "react";
 import { Input } from "./ui/input";
 import {
   Select,
@@ -35,10 +41,10 @@ type SearchBarProps = {
   useSelect?: boolean;
 };
 
-const SearchBar = ({
+const SearchBarForm = ({
   setIsSearchOpen,
   className,
-  useSelect = true,
+  useSelect,
 }: SearchBarProps) => {
   const router = useRouter();
   const pathname = usePathname();
@@ -130,6 +136,22 @@ const SearchBar = ({
         <IoSearch />
       </Button>
     </form>
+  );
+};
+
+const SearchBar = ({
+  setIsSearchOpen,
+  className,
+  useSelect = true,
+}: SearchBarProps) => {
+  return (
+    <Suspense>
+      <SearchBarForm
+        setIsSearchOpen={setIsSearchOpen}
+        className={className}
+        useSelect={useSelect}
+      />
+    </Suspense>
   );
 };
 

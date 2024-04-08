@@ -19,6 +19,7 @@ import {
   AccordionTrigger,
 } from "../ui/accordion";
 import { Button } from "../ui/button";
+import { Suspense } from "react";
 
 type Options = {
   useColor?: boolean;
@@ -111,95 +112,97 @@ const MobileFilter = () => {
         <span>Filter</span>
       </Button>
 
-      <AnimatePresence mode="wait">
-        {isFilterOpen && (
-          <motion.div
-            variants={ContainerVariants}
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
-            className="mobile-menu fixed top-0 left-0 w-full h-screen z-[99]"
-          >
-            <div
-              className="fixed top-0 left-0 w-full h-full bg-black/60"
-              onClick={() => dispatch(toggleFilterOpen())}
-            />
+      <Suspense>
+        <AnimatePresence mode="wait">
+          {isFilterOpen && (
             <motion.div
-              variants={itemVariants}
-              className="filter-options fixed top-0 left-0 w-full max-w-[300px] h-full bg-secondary z-[60] overflow-auto py-6 px-5"
+              variants={ContainerVariants}
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              className="mobile-menu fixed top-0 left-0 w-full h-screen z-[99]"
             >
-              <div className="w-full">
-                <div className="flex items-center justify-between mb-4">
-                  <h2 className="text-2xl font-semibold">Filter By</h2>
-                  <button
-                    type="button"
-                    className="text-xl p-1 h-6 w-6 bg-primary rounded-full flex justify-center items-center text-white"
-                    onClick={() => dispatch(toggleFilterOpen())}
-                    title="close"
-                  >
-                    <HiOutlineXMark />
-                  </button>
+              <div
+                className="fixed top-0 left-0 w-full h-full bg-black/60"
+                onClick={() => dispatch(toggleFilterOpen())}
+              />
+              <motion.div
+                variants={itemVariants}
+                className="filter-options fixed top-0 left-0 w-full max-w-[300px] h-full bg-secondary z-[60] overflow-auto py-6 px-5"
+              >
+                <div className="w-full">
+                  <div className="flex items-center justify-between mb-4">
+                    <h2 className="text-2xl font-semibold">Filter By</h2>
+                    <button
+                      type="button"
+                      className="text-xl p-1 h-6 w-6 bg-primary rounded-full flex justify-center items-center text-white"
+                      onClick={() => dispatch(toggleFilterOpen())}
+                      title="close"
+                    >
+                      <HiOutlineXMark />
+                    </button>
+                  </div>
+                  <Accordion type="single" collapsible className="w-full">
+                    {defaultOptions.useCategory && (
+                      <motion.div className="motion" variants={item}>
+                        <AccordionItem value="item-1">
+                          <AccordionTrigger className="border border-input bg-background hover:bg-accent px-3 rounded-lg hover:no-underline hover:text-primary">
+                            Categories
+                          </AccordionTrigger>
+                          <AccordionContent>
+                            <FilterByMobileCategories />
+                          </AccordionContent>
+                        </AccordionItem>
+                      </motion.div>
+                    )}
+                    {defaultOptions.useColor && (
+                      <motion.div className="motion" variants={item}>
+                        <AccordionItem value="item-2">
+                          <AccordionTrigger className="border border-input bg-background hover:bg-accent px-3 rounded-lg hover:no-underline hover:text-primary">
+                            Colors
+                          </AccordionTrigger>
+
+                          <AccordionContent>
+                            <FilterByMobileColors />
+                          </AccordionContent>
+                        </AccordionItem>
+                      </motion.div>
+                    )}
+
+                    {defaultOptions.usePrice && (
+                      <motion.div className="motion" variants={item}>
+                        <AccordionItem value="item-3">
+                          <AccordionTrigger className="border border-input bg-background hover:bg-accent px-3 rounded-lg hover:no-underline hover:text-primary">
+                            Price
+                          </AccordionTrigger>
+
+                          <AccordionContent>
+                            <FilterByMobilePrice />
+                          </AccordionContent>
+                        </AccordionItem>
+                      </motion.div>
+                    )}
+
+                    {defaultOptions.useSort && (
+                      <motion.div className="motion" variants={item}>
+                        <AccordionItem value="item-4">
+                          <AccordionTrigger className="border border-input bg-background hover:bg-accent px-3 rounded-lg hover:no-underline hover:text-primary">
+                            SortBy
+                          </AccordionTrigger>
+
+                          <AccordionContent>
+                            <SortByMobile />
+                          </AccordionContent>
+                        </AccordionItem>
+                      </motion.div>
+                    )}
+                  </Accordion>
                 </div>
-                <Accordion type="single" collapsible className="w-full">
-                  {defaultOptions.useCategory && (
-                    <motion.div className="motion" variants={item}>
-                      <AccordionItem value="item-1">
-                        <AccordionTrigger className="border border-input bg-background hover:bg-accent px-3 rounded-lg hover:no-underline hover:text-primary">
-                          Categories
-                        </AccordionTrigger>
-                        <AccordionContent>
-                          <FilterByMobileCategories />
-                        </AccordionContent>
-                      </AccordionItem>
-                    </motion.div>
-                  )}
-                  {defaultOptions.useColor && (
-                    <motion.div className="motion" variants={item}>
-                      <AccordionItem value="item-2">
-                        <AccordionTrigger className="border border-input bg-background hover:bg-accent px-3 rounded-lg hover:no-underline hover:text-primary">
-                          Colors
-                        </AccordionTrigger>
-
-                        <AccordionContent>
-                          <FilterByMobileColors />
-                        </AccordionContent>
-                      </AccordionItem>
-                    </motion.div>
-                  )}
-
-                  {defaultOptions.usePrice && (
-                    <motion.div className="motion" variants={item}>
-                      <AccordionItem value="item-3">
-                        <AccordionTrigger className="border border-input bg-background hover:bg-accent px-3 rounded-lg hover:no-underline hover:text-primary">
-                          Price
-                        </AccordionTrigger>
-
-                        <AccordionContent>
-                          <FilterByMobilePrice />
-                        </AccordionContent>
-                      </AccordionItem>
-                    </motion.div>
-                  )}
-
-                  {defaultOptions.useSort && (
-                    <motion.div className="motion" variants={item}>
-                      <AccordionItem value="item-4">
-                        <AccordionTrigger className="border border-input bg-background hover:bg-accent px-3 rounded-lg hover:no-underline hover:text-primary">
-                          SortBy
-                        </AccordionTrigger>
-
-                        <AccordionContent>
-                          <SortByMobile />
-                        </AccordionContent>
-                      </AccordionItem>
-                    </motion.div>
-                  )}
-                </Accordion>
-              </div>
+              </motion.div>
             </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          )}
+        </AnimatePresence>
+      </Suspense>
     </>
   );
 };
