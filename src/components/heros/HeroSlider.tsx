@@ -19,6 +19,7 @@ type HeroSliderProps = {
     bgImg: string;
   }[];
   content?: {
+    contentClass?: string;
     title: string;
     searchBar?: boolean;
     titleClass?: string;
@@ -33,7 +34,9 @@ const HeroSlider = ({
 }: HeroSliderProps) => {
   return heroImages.length === 1 ? (
     <div
-      className={`bg-center bg-cover aspect-[1015/402] max-h-[650px] p-0 w-full relative`}
+      className={
+        "bg-center bg-cover aspect-[1015/402] max-h-[650px] p-0 w-full relative"
+      }
     >
       <Image
         height={600}
@@ -43,16 +46,21 @@ const HeroSlider = ({
         className="w-full h-full object-cover"
       />
       {content && (
-        <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center flex-col gap-4">
+        <div
+          className={cn(
+            "absolute top-0 left-0 w-full h-full flex justify-center items-center flex-col gap-4 px-default",
+            content.contentClass
+          )}
+        >
           <h1
             className={cn(
               "text-3xl font-semibold md:text-4xl lg:text-5xl text-center",
-              content?.titleClass
+              content.titleClass
             )}
           >
             {content.title}
           </h1>
-          {content?.searchBar && <SearchBar />}
+          {content.searchBar && <SearchBar />}
         </div>
       )}
     </div>

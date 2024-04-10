@@ -51,6 +51,15 @@ export async function generateMetadata({ params }: LayoutProps) {
   };
 }
 
+// generate static site params for all shops
+export async function generateStaticParams() {
+  const shops = Object.keys(layoutSettings);
+
+  return shops.map((shop) => ({
+    shop,
+  }));
+}
+
 const layout = ({ children, params: { shop } }: LayoutProps) => {
   const settings = layoutSettings?.[shop as ShopNames];
 
@@ -199,6 +208,7 @@ const layout = ({ children, params: { shop } }: LayoutProps) => {
               title: "Medicine Delivered in 90 Minutes",
               titleClass: "text-gray-900",
               searchBar: true,
+              contentClass: "hidden md:flex",
             }}
           />
           <BannerSlider

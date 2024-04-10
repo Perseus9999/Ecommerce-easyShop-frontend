@@ -21,7 +21,7 @@ import {
   setCurrentUser,
 } from "@/lib/features/auth/authSlice";
 import fetchData from "@/lib/fetchDataFromApi";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { Dispatch, SetStateAction, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { LuLoader } from "react-icons/lu";
@@ -39,6 +39,7 @@ type LoginFormProps = {
 
 export function LoginForm({ setIsOpen }: LoginFormProps) {
   const router = useRouter();
+  const pathname = usePathname();
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
 
@@ -68,7 +69,13 @@ export function LoginForm({ setIsOpen }: LoginFormProps) {
         description: "You have successfully Logged in",
         variant: "success",
       });
-      router.back();
+
+      // if user is on login or register page, redirect to the previous page
+      if (pathname === "/login" || pathname === "/register") {
+        router.back();
+      } else {
+        router.push(pathname);
+      }
     } catch (error: any) {
       setIsLoading(false);
       toast({

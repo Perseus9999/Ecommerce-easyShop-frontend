@@ -39,10 +39,8 @@ const ScrollToTopBtn = () => {
   return (
     <div
       className={`${
-        show
-          ? "visible opacity-100 bottom-5"
-          : "invisible opacity-0 bottom-full"
-      } fixed bottom-5 right-5 z-[99] transition-all duration-300 ease-in-out`}
+        show ? "visible opacity-100 right-5" : "invisible opacity-0 -right-14"
+      } fixed bottom-12 z-[99] transition-all duration-300 ease-in-out`}
     >
       <Button
         className="text-2xl w-12 h-12 p-0"

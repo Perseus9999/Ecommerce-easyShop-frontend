@@ -51,7 +51,7 @@ const colors = [
   },
   {
     title: "Yollows",
-    img: "/icons/Yollows.png",
+    img: "/icons/yollows.png",
   },
   {
     title: "Greens",
