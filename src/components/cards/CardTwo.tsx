@@ -10,6 +10,7 @@ const CardTwo = ({
   price,
   unit_of_measure,
   oldPrice,
+  shop_category,
 }: AllProduct) => {
   return (
     <div className="card-two bg-secondary p-2.5 md:p-4 rounded-lg relative hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
@@ -53,7 +54,14 @@ const CardTwo = ({
 
           <AddToCartBtnWrapper
             btnStyle="style-2"
-            cartItem={{ _id, title, image: image[0], price, unit_of_measure }}
+            cartItem={{
+              _id,
+              title,
+              image: image[0],
+              price,
+              unit_of_measure,
+              shop_category,
+            }}
           />
         </div>
       </div>

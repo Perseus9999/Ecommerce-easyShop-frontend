@@ -53,6 +53,7 @@ type ClothingProduct = {
   shop_category: string;
   unit_of_measure: string;
   colors: string[];
+  sizes: string[];
 };
 
 type MakeupProduct = {

@@ -8,12 +8,13 @@ import {
   incrementAmount,
   removeFromCart,
 } from "@/lib/features/cart/cartSlice";
-import { useDispatch } from "react-redux";
-import { Button } from "./ui/button";
+import { useAppSelector } from "@/lib/hooks";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import { PiBasketFill } from "react-icons/pi";
-import { useAppSelector } from "@/lib/hooks";
-import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { Button } from "./ui/button";
 
 type AddToCartWrapperProps = {
   cartItem: CartItem;
@@ -24,9 +25,13 @@ const AddToCartBtnWrapper = ({
   cartItem,
   btnStyle = "style-1",
 }: AddToCartWrapperProps) => {
+  const router = useRouter();
   const [addedItem, setAddedItem] = useState<undefined | CartItem>();
+  const [disableBtn, setDisableBtn] = useState(true);
+  const { cartItems, countValue, selectedColor, selectedSize } = useAppSelector(
+    (state) => state.cartSlice
+  );
   const dispatch = useDispatch();
-  const { cartItems, countValue } = useAppSelector((state) => state.cartSlice);
 
   useEffect(() => {
     setAddedItem(cartItems.find((item) => item._id === cartItem._id));
@@ -34,8 +39,75 @@ const AddToCartBtnWrapper = ({
     return () => {};
   }, [cartItem._id, cartItems, dispatch]);
 
-  console.log(addedItem);
+  // handle add to cart button
+  const handleAddToCart = (withCounter: boolean) => {
+    if (cartItem.shop_category === "clothing") {
+      // checking color and size is selected or not
+      if (selectedColor && selectedSize) {
+        // checking btn is with counter or not
+        if (withCounter) {
+          addedItem
+            ? dispatch(removeFromCart(cartItem._id))
+            : dispatch(
+                addToCart({
+                  ...cartItem,
+                  selectedColor,
+                  selectedSize,
+                  amount: countValue,
+                })
+              );
+        } else {
+          dispatch(
+            addToCart({
+              ...cartItem,
+              selectedColor,
+              selectedSize,
+              amount: countValue,
+            })
+          );
+        }
+      } else {
+        // when color and size is not selected redirect to the product page
+        router.push(`/products/${cartItem._id}`);
+      }
+    } else {
+      // if shop category is not clothing
+      if (withCounter) {
+        addedItem
+          ? dispatch(removeFromCart(cartItem._id))
+          : dispatch(
+              addToCart({
+                ...cartItem,
+                amount: countValue,
+              })
+            );
+      } else {
+        dispatch(
+          addToCart({
+            ...cartItem,
+            selectedColor,
+            selectedSize,
+            amount: 1,
+          })
+        );
+      }
+    }
+  };
 
+  // disable the btn when no color or size is selected
+  useEffect(() => {
+    if (cartItem?.shop_category === "clothing") {
+      if (selectedColor && selectedSize) {
+        setDisableBtn(false);
+      } else {
+        setDisableBtn(true);
+      }
+    } else {
+      setDisableBtn(false);
+    }
+  }, [selectedColor, selectedSize, cartItem.shop_category]);
+
+  // counter component
   const Counter = () => (
     <div className="flex w-full sm:w-auto relative z-10 items-center bg-background rounded-lg overflow-hidden border">
       <Button
@@ -62,13 +134,10 @@ const AddToCartBtnWrapper = ({
     <>
       {btnStyle === "withoutCounter" && (
         <Button
-          className="basis-1/2 flex gap-2 items-center"
+          className="flex gap-2 items-center w-fit px-5 text-sm sm:basis-1/2 sm:w-auto sm:text-base"
           type="button"
-          onClick={() => {
-            addedItem
-              ? dispatch(removeFromCart(cartItem._id))
-              : dispatch(addToCart({ ...cartItem, amount: countValue }));
-          }}
+          onClick={() => handleAddToCart(true)}
+          disabled={disableBtn}
         >
           <span className="text-lg">
             <FaShoppingCart />
@@ -76,13 +145,14 @@ const AddToCartBtnWrapper = ({
           <span>{addedItem ? "Added" : "Add to cart"}</span>
         </Button>
       )}
+
       {btnStyle === "style-1" && (
         <>
           {!addedItem ? (
             <Button
               className="w-full flex gap-2 items-center text-xs sm:text-base relative z-10"
               type="button"
-              onClick={() => dispatch(addToCart({ ...cartItem, amount: 1 }))}
+              onClick={() => handleAddToCart(false)}
             >
               <span className="text-lg">
                 <FaShoppingCart />
@@ -101,7 +171,7 @@ const AddToCartBtnWrapper = ({
             <Button
               type="button"
               className="bg-transparent border-input text-primary flex gap-2 items-center rounded-3xl hover:bg-primary hover:text-white text-xs sm:text-base w-full sm:w-auto relative z-10"
-              onClick={() => dispatch(addToCart({ ...cartItem, amount: 1 }))}
+              onClick={() => handleAddToCart(false)}
             >
               <span className="text-xl">
                 <PiBasketFill />
@@ -122,7 +192,7 @@ const AddToCartBtnWrapper = ({
               type="button"
               variant="outline"
               title="Add to cart"
-              onClick={() => dispatch(addToCart({ ...cartItem, amount: 1 }))}
+              onClick={() => handleAddToCart(false)}
             >
               <span className="text-sm sm:text-base">Add To Cart</span>
             </Button>
@@ -139,7 +209,7 @@ const AddToCartBtnWrapper = ({
               type="button"
               variant="outline"
               title="Add to cart"
-              onClick={() => dispatch(addToCart({ ...cartItem, amount: 1 }))}
+              onClick={() => handleAddToCart(false)}
             >
               <span className="text-lg">+</span>
             </Button>

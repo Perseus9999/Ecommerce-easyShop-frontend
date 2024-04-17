@@ -1,6 +1,7 @@
 "use client";
 
-import { removeFromCart, handleCartOpen } from "@/lib/features/cart/cartSlice";
+import colors from "@/data/colors.json";
+import { handleCartOpen, removeFromCart } from "@/lib/features/cart/cartSlice";
 import { useAppSelector } from "@/lib/hooks";
 import { totalPrice } from "@/lib/utils";
 import { AnimatePresence, Variants, motion } from "framer-motion";
@@ -86,6 +87,8 @@ const AddedCart = () => {
     pathname.includes("profile") ||
     pathname.includes("checkout");
 
+  const reversedItems = [...cartItems].reverse();
+
   return (
     <>
       <div
@@ -136,7 +139,7 @@ const AddedCart = () => {
                 <Button
                   type="button"
                   className="rounded-full h-10 w-10 p-0 text-xl hover:border-primary hover:text-primary"
-                  variant={"outline"}
+                  variant="outline"
                   onClick={() => dispatch(handleCartOpen())}
                 >
                   <HiMiniXMark />
@@ -145,55 +148,89 @@ const AddedCart = () => {
               {/* cart items */}
               <div className="flex-1 overflow-auto pb-3">
                 <ul className="px-3">
-                  {cartItems.map((c) => (
-                    <motion.li
-                      variants={item}
-                      layout
-                      className="relative"
-                      key={c._id}
-                    >
-                      <Button
-                        type="button"
-                        variant="outline"
-                        className="absolute top-0 right-2 h-7 w-7 p-0 text-base rounded-full hover:text-primary hover:border-primary"
-                        onClick={() => dispatch(removeFromCart(c._id))}
-                      >
-                        <HiMiniXMark />
-                      </Button>
-                      <Link
-                        href={`/products/${c._id}`}
-                        className="flex gap-3 items-center mt-3 p-2 hover:bg-accent rounded-xl overflow-hidden"
-                        onClick={() => dispatch(handleCartOpen())}
-                      >
-                        <div className="flex gap-3 w-full">
-                          <Image
-                            src={c.image}
-                            width={70}
-                            height={70}
-                            alt={c.title}
-                            className="rounded-lg border"
-                          />
-                          <div className="flex-1 flex justify-between gap-4 items-center">
-                            <div className="h-full">
-                              <h3 className="font-semibold line-clamp-1">
-                                {c.title}
-                              </h3>
-                              <p className="mt-1 flex gap-2 items-center">
-                                <span className="text-primary">${c.price}</span>
-                                <span>*</span>
-                                <span>
-                                  {c.amount} {c.unit_of_measure}
-                                </span>
-                              </p>
+                  {isClient &&
+                    reversedItems.map((c) => {
+                      const colorImg = colors.find(
+                        (col) =>
+                          col.title.toLowerCase() ===
+                          c.selectedColor?.toLowerCase()
+                      );
+                      return (
+                        <motion.li
+                          variants={item}
+                          layout
+                          className="relative"
+                          key={c._id}
+                        >
+                          <Button
+                            type="button"
+                            variant="outline"
+                            className="absolute top-0 right-2 h-7 w-7 p-0 text-base rounded-full hover:text-primary hover:border-primary"
+                            onClick={() => dispatch(removeFromCart(c._id))}
+                          >
+                            <HiMiniXMark />
+                          </Button>
+                          <Link
+                            href={`/products/${c._id}`}
+                            className="flex gap-3 items-center mt-3 p-2 hover:bg-accent rounded-xl overflow-hidden"
+                            onClick={() => dispatch(handleCartOpen())}
+                          >
+                            <div className="flex gap-3 w-full">
+                              <Image
+                                src={c.image}
+                                width={70}
+                                height={70}
+                                alt={c.title}
+                                className="rounded-lg border"
+                              />
+                              <div className="flex-1 flex justify-between gap-4 items-center">
+                                <div className="h-full">
+                                  <h3 className="font-semibold line-clamp-1">
+                                    {c.title}
+                                  </h3>
+                                  <p className="mt-1 flex gap-2 items-center">
+                                    <span className="text-primary">
+                                      ${c.price}
+                                    </span>
+                                    <span>*</span>
+                                    <span>
+                                      {c.amount} {c.unit_of_measure}
+                                    </span>
+                                  </p>
+                                  {(c?.selectedColor || c?.selectedSize) && (
+                                    <div className="flex gap-2 text-sm items-center mt-2">
+                                      <p>
+                                        <strong>Size: </strong>
+                                        <span>{c.selectedSize}</span>
+                                      </p>
+                                      <p
+                                        title={c?.selectedColor}
+                                        className="flex gap-1 items-center"
+                                      >
+                                        <strong>Color: </strong>
+                                        <Image
+                                          src={colorImg?.img || ""}
+                                          alt={colorImg?.title || ""}
+                                          width={20}
+                                          height={20}
+                                          className="rounded-full border bg-gray-600"
+                                        />
+                                      </p>
+                                    </div>
+                                  )}
+                                </div>
+                                <p className="font-semibold">
+                                  $
+                                  {(Number(c.price) * (c?.amount || 1)).toFixed(
+                                    2
+                                  )}
+                                </p>
+                              </div>
                             </div>
-                            <p className="font-semibold">
-                              ${(Number(c.price) * (c?.amount || 1)).toFixed(2)}
-                            </p>
-                          </div>
-                        </div>
-                      </Link>
-                    </motion.li>
-                  ))}
+                          </Link>
+                        </motion.li>
+                      );
+                    })}
                 </ul>
               </div>
 

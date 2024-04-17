@@ -3332,6 +3332,7 @@
       "rating": 5,
       "amount": 33,
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)",
       "colors": ["browns"]
     },
@@ -3346,6 +3347,7 @@
       "amount": 33,
       "colors": ["grays"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3359,6 +3361,7 @@
       "amount": 69,
       "colors": ["reds"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3372,6 +3375,7 @@
       "amount": 69,
       "colors": ["reds"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3386,6 +3390,7 @@
       "amount": 33,
       "colors": ["white"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3399,6 +3404,7 @@
       "amount": 39,
       "colors": ["white"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3412,6 +3418,7 @@
       "amount": 39,
       "colors": ["browns"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3426,6 +3433,7 @@
       "amount": 39,
       "colors": ["black"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3439,6 +3447,7 @@
       "amount": 39,
       "colors": ["browns"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3452,6 +3461,7 @@
       "amount": 39,
       "colors": ["greens"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3465,6 +3475,7 @@
       "amount": 39,
       "colors": ["blues"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3478,6 +3489,7 @@
       "amount": 39,
       "colors": ["black"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3491,6 +3503,7 @@
       "amount": 39,
       "colors": ["oranges"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3504,6 +3517,7 @@
       "amount": 39,
       "colors": ["white"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3517,6 +3531,7 @@
       "amount": 39,
       "colors": ["browns"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3530,6 +3545,7 @@
       "amount": 39,
       "colors": ["browns"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3543,6 +3559,7 @@
       "amount": 39,
       "colors": ["blues"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3556,6 +3573,7 @@
       "amount": 39,
       "colors": ["blues", "black", "white"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3569,6 +3587,7 @@
       "amount": 39,
       "colors": ["blues"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3582,6 +3601,7 @@
       "amount": 39,
       "colors": ["blues", "black", "grays"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3595,6 +3615,7 @@
       "amount": 39,
       "colors": ["white", "black"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3608,6 +3629,7 @@
       "amount": 39,
       "colors": ["reds", "black"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3621,6 +3643,7 @@
       "amount": 39,
       "colors": ["whtie", "black"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3634,6 +3657,7 @@
       "amount": 39,
       "colors": ["reds", "black"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3647,6 +3671,7 @@
       "amount": 39,
       "colors": ["pinks"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3660,6 +3685,7 @@
       "amount": 39,
       "colors": ["purples"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3673,6 +3699,7 @@
       "amount": 39,
       "colors": ["yollows"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3686,6 +3713,7 @@
       "amount": 39,
       "colors": ["reds"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3699,6 +3727,7 @@
       "amount": 39,
       "colors": ["reds"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3712,6 +3741,7 @@
       "amount": 39,
       "colors": ["blue"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3725,6 +3755,7 @@
       "amount": 39,
       "colors": ["reds"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3738,6 +3769,7 @@
       "amount": 39,
       "colors": ["blues"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3751,6 +3783,7 @@
       "amount": 39,
       "colors": ["blues"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3764,6 +3797,7 @@
       "amount": 39,
       "colors": ["grays"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3777,6 +3811,7 @@
       "amount": 39,
       "colors": ["blues"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3790,6 +3825,7 @@
       "amount": 39,
       "colors": ["grays", "black"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3803,6 +3839,7 @@
       "amount": 39,
       "colors": ["black"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3816,6 +3853,7 @@
       "amount": 39,
       "colors": ["blues"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3830,6 +3868,7 @@
       "amount": 39,
       "colors": ["grays"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3843,6 +3882,7 @@
       "amount": 39,
       "colors": ["grays"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3856,6 +3896,7 @@
       "amount": 39,
       "colors": ["black"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3869,6 +3910,7 @@
       "amount": 39,
       "colors": ["grays", "black"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3882,6 +3924,7 @@
       "amount": 39,
       "colors": ["grays", "blues"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3896,6 +3939,7 @@
       "amount": 39,
       "colors": ["grays", "blues"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3909,6 +3953,7 @@
       "amount": 39,
       "colors": ["grays"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3922,6 +3967,7 @@
       "amount": 39,
       "colors": ["black"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3935,6 +3981,7 @@
       "amount": 39,
       "colors": ["blues"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3948,6 +3995,7 @@
       "amount": 39,
       "colors": ["blues", "black"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3961,6 +4009,7 @@
       "amount": 69,
       "colors": ["greens"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3974,6 +4023,7 @@
       "amount": 69,
       "colors": ["blues"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -3987,6 +4037,7 @@
       "amount": 69,
       "colors": ["blues"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -4000,6 +4051,7 @@
       "amount": 69,
       "colors": ["black"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -4013,6 +4065,7 @@
       "amount": 69,
       "colors": ["black"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -4026,6 +4079,7 @@
       "amount": 69,
       "colors": ["blues"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -4039,6 +4093,7 @@
       "amount": 69,
       "colors": ["oranges"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -4052,6 +4107,7 @@
       "amount": 69,
       "colors": ["yollows"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -4065,6 +4121,7 @@
       "amount": 69,
       "colors": ["white"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -4078,6 +4135,7 @@
       "amount": 69,
       "colors": ["white"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -4091,6 +4149,7 @@
       "amount": 69,
       "colors": ["white"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -4104,6 +4163,7 @@
       "amount": 69,
       "colors": ["purples"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {
@@ -4117,6 +4177,7 @@
       "amount": 69,
       "colors": ["greens"],
       "shop_category": "clothing",
+      "sizes": ["xs", "sm", "md", "lg", "xl", "xxl"],
       "unit_of_measure": "pc(s)"
     },
     {

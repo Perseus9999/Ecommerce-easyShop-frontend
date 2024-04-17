@@ -47,7 +47,6 @@ const Counter = ({ className, quantity, product }: CounterProps) => {
         -
       </Button>
       <Input
-        defaultValue={1}
         className="text-center"
         readOnly
         value={addedItem?.amount || countValue}

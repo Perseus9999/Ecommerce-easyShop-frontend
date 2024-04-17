@@ -6,7 +6,8 @@ import AddToCartBtnWrapper from "../AddToCartWrapper";
 import AddToWishlist from "../AddToWishlist";
 
 const WishlistCard = (props: AllProduct) => {
-  const { _id, title, price, image, oldPrice, unit_of_measure } = props;
+  const { _id, title, price, image, oldPrice, unit_of_measure, shop_category } =
+    props;
   return (
     <div className="wishlist-card bg-secondary p-2.5 md:p-4 rounded-lg relative hover:-translate-y-1 hover:shadow-xl transition-all duration-300 border">
       <div className="absolute top-3 right-3">
@@ -39,7 +40,14 @@ const WishlistCard = (props: AllProduct) => {
         </p>
         <AddToCartBtnWrapper
           btnStyle="style-4"
-          cartItem={{ _id, title, image: image[0], price, unit_of_measure }}
+          cartItem={{
+            _id,
+            title,
+            image: image[0],
+            price,
+            unit_of_measure,
+            shop_category,
+          }}
         />
       </div>
     </div>

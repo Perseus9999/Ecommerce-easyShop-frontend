@@ -8,6 +8,9 @@ export type CartItem = {
   amount?: number;
   image: string;
   unit_of_measure: string;
+  shop_category: string;
+  selectedSize?: string | undefined;
+  selectedColor?: string | undefined;
 };
 
 export interface CartState {
@@ -15,6 +18,8 @@ export interface CartState {
   wishlists: AllProduct[];
   isCartOpen: boolean;
   countValue: number;
+  selectedSize: string | undefined;
+  selectedColor: string | undefined;
 }
 
 // Define the initial state using that type
@@ -29,6 +34,8 @@ const initialState: CartState = {
       JSON.parse(window.localStorage.getItem("wishlists") as string)) ||
     [],
   countValue: 1,
+  selectedSize: undefined,
+  selectedColor: undefined,
 };
 
 export const cartSlice = createSlice({
@@ -44,9 +51,15 @@ export const cartSlice = createSlice({
         (item) => item._id === action.payload._id
       );
 
-      if (item) return;
+      if (item) {
+        item.selectedColor = state.selectedColor;
+        item.selectedSize = state.selectedSize;
+        return;
+      }
       state.cartItems = [...state.cartItems, action.payload];
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
+      state.selectedColor = undefined;
+      state.selectedSize = undefined;
     },
 
     // delete
@@ -56,6 +69,8 @@ export const cartSlice = createSlice({
       );
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
       state.countValue = 1;
+      state.selectedColor = undefined;
+      state.selectedSize = undefined;
     },
 
     incrementAmount: (state, action: PayloadAction<number | string>) => {
@@ -114,6 +129,16 @@ export const cartSlice = createSlice({
             : state.countValue - 1;
       }
     },
+
+    // selected color
+    handleColorChange: (state, action: PayloadAction<string | undefined>) => {
+      state.selectedColor = action.payload;
+    },
+
+    // selected Sizes
+    handleSizeChange: (state, action: PayloadAction<string | undefined>) => {
+      state.selectedSize = action.payload;
+    },
   },
 });
 
@@ -125,5 +150,7 @@ export const {
   decrementAmount,
   handleCartOpen,
   toggleToWishlists,
+  handleColorChange,
+  handleSizeChange,
 } = cartSlice.actions;
 export default cartSlice.reducer;

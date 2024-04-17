@@ -1,7 +1,5 @@
 "use client";
 
-import { DropdownMenuItem } from "@radix-ui/react-dropdown-menu";
-
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -10,6 +8,8 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import colors from "@/data/colors.json";
+import { DropdownMenuItem } from "@radix-ui/react-dropdown-menu";
 import Image from "next/image";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
@@ -19,61 +19,6 @@ type Color = {
   title: string;
   img: string;
 };
-
-const colors = [
-  {
-    title: "Black",
-    img: "/icons/blacks.png",
-  },
-  {
-    title: "White",
-    img: "/icons/whites.png",
-  },
-  {
-    title: "Grays",
-    img: "/icons/grays.png",
-  },
-  {
-    title: "Browns",
-    img: "/icons/browns.png",
-  },
-  {
-    title: "Reds",
-    img: "/icons/reds.png",
-  },
-  {
-    title: "Pinks",
-    img: "/icons/pinks.png",
-  },
-  {
-    title: "Oranges",
-    img: "/icons/oranges.png",
-  },
-  {
-    title: "Yollows",
-    img: "/icons/yollows.png",
-  },
-  {
-    title: "Greens",
-    img: "/icons/greens.png",
-  },
-  {
-    title: "Blues",
-    img: "/icons/blues.png",
-  },
-  {
-    title: "Purples",
-    img: "/icons/purples.png",
-  },
-  {
-    title: "SkyBlues",
-    img: "/icons/skyblues.png",
-  },
-  {
-    title: "Multi",
-    img: "/icons/multi.png",
-  },
-];
 
 const FilterByColors = () => {
   const router = useRouter();

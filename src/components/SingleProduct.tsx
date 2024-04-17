@@ -6,6 +6,7 @@ import Counter from "./Counter";
 import HistoryBackBtn from "./HistoryBackBtn";
 import RatingStar from "./RatingStar";
 import ProductImageSlider from "./sliders/ProductImageSlider";
+import SelectVariants from "./SelectVariants";
 
 type SingleProductProps = {
   product: SingleProductType;
@@ -58,15 +59,43 @@ const SingleProduct = ({ product }: SingleProductProps) => {
           )}
 
           <p className="mt-4 text-muted-foreground">{product?.description}</p>
+
+          <div className="flex gap-x-4 items-center flex-wrap">
+            {product?.colors && (
+              <div className="mt-4">
+                <SelectVariants colors={product.colors} productId={_id} />
+              </div>
+            )}
+
+            {product?.sizes && (
+              <div className="mt-4">
+                <SelectVariants sizes={product.sizes} productId={_id} />
+              </div>
+            )}
+          </div>
           <div className="flex gap-4 items-center mt-5">
             <Counter
               quantity={product?.amount}
-              product={{ _id, title, image: image[0], price, unit_of_measure }}
+              product={{
+                _id,
+                title,
+                image: image[0],
+                price,
+                unit_of_measure,
+                shop_category,
+              }}
             />
 
             <AddToCartBtnWrapper
               btnStyle="withoutCounter"
-              cartItem={{ _id, title, image: image[0], price, unit_of_measure }}
+              cartItem={{
+                _id,
+                title,
+                image: image[0],
+                price,
+                unit_of_measure,
+                shop_category,
+              }}
             />
           </div>
 
