@@ -22,18 +22,7 @@ import Image from "next/image";
 import { Button } from "./ui/button";
 import { IoSearch } from "react-icons/io5";
 import { cn } from "@/lib/utils";
-
-const shops = [
-  { title: "gadgets", icon: "/icons/gadgets.png" },
-  { title: "grocery", icon: "/icons/grocery.png" },
-  { title: "bakery", icon: "/icons/bakery.png" },
-  { title: "clothing", icon: "/icons/clothing.png" },
-  { title: "makeup", icon: "/icons/makeup.png" },
-  { title: "bags", icon: "/icons/bag.png" },
-  { title: "furniture", icon: "/icons/furniture.png" },
-  { title: "books", icon: "/icons/books.png" },
-  { title: "medicine", icon: "/icons/medicine.png" },
-];
+import shops from "@/data/shops.json";
 
 type SearchBarProps = {
   setIsSearchOpen?: Dispatch<SetStateAction<boolean>>;

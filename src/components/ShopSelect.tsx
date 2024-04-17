@@ -12,23 +12,13 @@ import {
   DropdownMenuLabel,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
+import shops from "@/data/shops.json";
 
 type ShopOption = {
   title: string;
   icon: string;
 };
 
-const shops: ShopOption[] = [
-  { title: "gadgets", icon: "/icons/gadgets.png" },
-  { title: "grocery", icon: "/icons/grocery.png" },
-  { title: "bakery", icon: "/icons/bakery.png" },
-  { title: "clothing", icon: "/icons/clothing.png" },
-  { title: "makeup", icon: "/icons/makeup.png" },
-  { title: "bags", icon: "/icons/bag.png" },
-  { title: "furniture", icon: "/icons/furniture.png" },
-  { title: "books", icon: "/icons/books.png" },
-  { title: "medicine", icon: "/icons/medicine.png" },
-];
 const ShopSelect = () => {
   const router = useRouter();
   const pathname = usePathname();

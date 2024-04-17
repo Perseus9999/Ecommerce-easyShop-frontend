@@ -1,11 +1,8 @@
-import React from "react";
-import ProductCard from "./cards/ProductCard";
-import Paginations from "./Paginations";
-import layoutSettings from "@/lib/layoutSettings";
 import fetchData from "@/lib/fetchDataFromApi";
-import { rgx } from "@/lib/utils";
-import SelectedFilters from "./filters/SelectedFilters";
+import layoutSettings from "@/lib/layoutSettings";
 import NoProductFound from "./NoProductFound";
+import Paginations from "./Paginations";
+import ProductCard from "./cards/ProductCard";
 
 type CategoryPageProps = {
   searchParams: SearchParamsType;

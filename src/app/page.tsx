@@ -4,6 +4,7 @@ import BooksCategory from "@/components/BooksCategory";
 import FeaturedProducts from "@/components/FeaturedProducts";
 import ShopCategories from "@/components/ShopCategories";
 import HeroSlider from "@/components/heros/HeroSlider";
+import { Suspense } from "react";
 
 const heroImages = [
   {
@@ -50,7 +51,13 @@ const banners = [
   },
 ];
 
-export default function Home() {
+export default function Home({
+  searchParams,
+}: {
+  searchParams: {
+    featured: string;
+  };
+}) {
   return (
     <main>
       <HeroSlider heroImages={heroImages} />
@@ -58,7 +65,7 @@ export default function Home() {
       <ShopCategories />
       <BooksCategory />
       <BekaryCategories />
-      <FeaturedProducts />
+      <FeaturedProducts featured={searchParams.featured} />
     </main>
   );
 }
