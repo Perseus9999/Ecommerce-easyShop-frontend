@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
 import {
   Carousel,
   CarouselContent,
@@ -9,6 +7,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Image from "next/image";
+import Link from "next/link";
 
 type BookSliderProps = {
   books: BooksProduct[] | [];

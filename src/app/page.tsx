@@ -4,7 +4,6 @@ import BooksCategory from "@/components/BooksCategory";
 import FeaturedProducts from "@/components/FeaturedProducts";
 import ShopCategories from "@/components/ShopCategories";
 import HeroSlider from "@/components/heros/HeroSlider";
-import { Suspense } from "react";
 
 const heroImages = [
   {
